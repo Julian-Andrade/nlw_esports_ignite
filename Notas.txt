@@ -1,0 +1,126 @@
+(Mobile)
+
+Dependências:
+
+> Expo
+    > Custom Fonts Google
+        > Alteração para fonte personalizada
+        > Instalação => expo install expo-font @expo-google-fonts/inter
+    > Linear Gradient
+        > Biblioteca para auxiliar na criação de gradients colors
+        > Instalação => expo install expo-linear-gradient
+> React Native
+. React Navigation
+    > react-native-safe-area-context
+        > Garante que a aplicação atingirá o conteúdo seguro da tela do smartphone
+        > Evita a perda de detalhes, principalmente em dispositivo IOS.
+        > Instalação => expo install react-native-safe-area-context
+
+
+Extensões:
+
+> R Component
+    > Extensão para melhorar a produtividade no React Native
+        > RNSO  
+            > Comando para criar uma estrutura para o "styles.ts" em TypeScript
+        > RNBC
+            > Comando para criar uma estrutura para o "index.tsx" em TypeScript
+
+
+(Server)
+
+Dicas:
+
+> Sempre que for trabalhar com preços e horários, tente não quebrar os valores.
+    > 1:30hr -> 90 min
+    > RS 179,89 -> 17989
+
+API e Rotas:
+
+> HTTP methods / API RESTful / HTTP codes
+    > HTTP methods
+        > get, post, put, patch, delete (principais)
+    > API Restful
+        > uma API para ser considerada RESTful, segue os critérios estabelecidos de boas práticas
+    > HTTP codes
+        > 404, 402, 201 -> são os códigos http para informar situações que acontecem no servidor
+        > uma boa API possui um boa informação dos HTTP codes.
+        > HTTP codes -> https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status
+        > Relação de HTTP codes
+            > Iniciam com 2 -> Mensagem de sucesso
+            > Iniciam com 3 -> Mensagem de redirecionamento
+            > Iniciam com 4 -> Mensagem de erro gerada pela aplicação
+            > Iniciam com 5 -> Mensagem de erro inesperado
+
+> Você pode ter rotas iguals com métodos diferentes
+    > app.get("/ads"), app.post("/ads")
+
+> Tipos de Parâmetros
+    > Query, Route, Body
+        > Query
+            > São parâmetros que vem através do "?"
+            > São utilizados quando necessitamos persistir no estado
+            > Persistir no estado significa continuar no estado atual escolhido
+            > Os parâmetros sempre são nomeados
+            > ex: quando queremos filtrar algo na aplicação ou buscar algo na homepage
+            > ex: https://www.globo.com/busca/?q=brasil
+            > ex: https://localhost:3001/ads?page=2&sort=title
+                > page=2 -> página 2, sort=title -> ordenar pelo título, & -> concatenam os dois parâmetros
+
+        > Route
+            > São parâmetros também da URL, assim como o query
+            > Não são nomeados
+            > Utilizamos geralmente quando queremos identifcar algum recurso em nossa API
+            > ex: https://localhost:3001/ads/5
+            > ex: https://localhost:3001/ads/counter-strike-global-offensive
+
+        > Body
+            > Não são parâmetros de URL, ficam "escondidos" na requisição
+            > São parâmetros utilizados quando queremos enviar várias informações
+            > Geralmente utilizados para formulários
+            > Recomendados para utilizar no envio de informações sensíveis (senha, usuário)
+
+> Comunicação com o Banco de Dados
+    > SqLite3, KnexJs, Prisma
+        > SqLite3
+            > Driver nativo para comunicação entre o node.js e o sqlite
+            > Formato mais puro para fazer integração entre o backend e o banco de Dados
+        > KnexJs
+            > Query Builder -> Escrevemos em JavaScript e a ferramenta converte para SQL
+            > Formato amigável para integrar entre o backend e o banco de dados
+            > Evita de escrever os comandos em SQL puro
+        > Prisma
+            > ORM -> Object Relational Mapper
+            > Funciona parecido como um Query Builder
+            > Cada tabela se relaciona com uma entidade / classe do código escrito
+            > Formato mais fácil para integrar entre o backend e o banco de dados
+            > Ótimo formato para utilizar com JavaScript e TypeScript
+            
+            > Instalação -> npm i prisma -D
+            > Inicialização -> npx prisma init --datasource-provider "informar o banco de dados s/ aspas" ex: SQLite
+            
+            > Ao inicializar irão aparecer dois arquivos, (schema.prisma) e (.env)
+                > schema.prisma -> Arquivo onde serão criadas as configurações do banco de dados
+                > .env -> Arquivo onde serão criadas as variáveis de produção
+            > Necessário instalar a extensão "Prisma" para uma melhor sintaxe
+            > Necessário adicionar a configuração abaixo dentro do arquivo de usuário (settings.json)
+                >  "[prisma]": {
+                   "editor.formatOnSave": true
+                   },
+                > Esta configuração garante uma formatação automática sempre que salvar o arquivo
+            
+            > Versionamento -> npx prisma migrate dev
+                > Solicitará o nome da nova migração, este nome deve ser escolhido de acordo o que foi feito no código
+                   ex: npx prisma migrate dev -> create a table game
+            
+            > Necessário instalar a extensão (sqlite) para melhor visualização dos dados do banco de dados
+            > Pode-se também executar o comando -> npx prisma studio
+                   > Este comando executa uma interface gráfica na web para visualizar o banco de dados
+            
+            > Para acessarmos o banco de dados atraves do cliente, instalamentos o @primsa/client
+            > Instalação -> npm i @prisma/client
+
+
+
+
+
