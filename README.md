@@ -83,4 +83,4 @@ expo start
 
 ---
 
-<p align="center">Obrigado pela visita. :love_you_gesture:</p>
+<p align="center">Obrigado pela visita. :love_you_gesture: \ Thanks for your visit. :black_heart:</p>
