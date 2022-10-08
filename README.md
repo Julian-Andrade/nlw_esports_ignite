@@ -1,5 +1,7 @@
 <h1 align="center">
-  <img  src="https://github.com/Julian-Andrade/nlw_rocketseat_ignite/blob/main/web/src/assets/logo-nlw-esports.svg" width="200px" />
+  <img width="200px" src="https://uploaddeimagens.com.br/images/004/054/563/original/julianandrade.png?1665240664"/>
+  <br>
+  <img width="150px" src="https://github.com/Julian-Andrade/nlw_rocketseat_ignite/blob/main/web/src/assets/logo-nlw-esports.svg" />
   <p>Rocketseat - Next Level Week</p>
 </h1>
 
