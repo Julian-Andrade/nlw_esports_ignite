@@ -51,7 +51,7 @@ Mobile
 expo start
 ```
 
-***:file_folder: Demonstração \ Demonstration***
+***:eye_speech_bubble: Demonstração \ Demonstration***
 
 *Web*
 
